@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <title>Socket.IO chat</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body style="background-color: floralwhite;">
+  <div class="container-fluid">
+    <div class="col-md-offset-2 col-md-8">
+      <h1></h1>
+      <div class="well clearfix">
+        <div class="pull-left col-md-6">
+          <button class="btn" id="history" type="button"><span class="glyphicon glyphicon-floppy-save"></span> <span class="hidden-xs">Pull chat history</span></button>
+          <button class="btn" id="clearHistory" type="button"><span class="glyphicon glyphicon-floppy-remove"></span> <span class="hidden-xs">Clear chat history</span></button>
+        </div>
+        <hr class="clearfix show-xs">
+        <div class="pull-right col-md-6">
+          <div class="input-group">
+            <div class="input-group-addon">ID</div>
+            <input type="text" class="form-control" id="id" autocomplete="off" placeholder="name" value="Anonimus">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+          </div>
+        </div>
+      </div>
+      <canvas id="canvas" width="400" height="300">
+        This text is displayed if your browser does not support HTML5 Canvas.
+      </canvas>
+      <div class="well">
+        <dl id="messages"></dl>
+      </div>
+      <form class="well" action="">
+        <div class="form-group">
+          <label for="m">Message</label>
+          <input type="text" class="form-control" id="m" autocomplete="off" placeholder="message">
+        </div>
+        <button class="btn" id="sendMsg" type="button">Send</button>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script src="canvas.js"></script>
+</body>
+</html>
